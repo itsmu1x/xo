@@ -5,6 +5,9 @@ import { ToastContainer } from "react-toastify"
 import "./styles.css"
 import "react-toastify/ReactToastify.min.css"
 import { AuthProvider } from "@/components/contexts/auth"
+import Link from "next/link"
+import Github from "@/components/icons/github"
+import LinkedIn from "@/components/icons/linkedin"
 
 export const metadata: Metadata = {
     title: "Multiplayer Tic Tac Toe",
@@ -39,6 +42,26 @@ export default async function RootLayout({
                         <div className="min-h-dvh grid place-items-center p-4">
                             <div className="container max-w-2xl px-5">
                                 {children}
+
+                                <div className="mt-6 w-fit flex gap-2">
+                                    <Link
+                                        className="duration-300 hover:scale-110 hover:rotate-3"
+                                        aria-label="Github"
+                                        href="https://github.com/itsmu1x/xo"
+                                        target="_blank"
+                                    >
+                                        <Github className="w-8 h-8" />
+                                    </Link>
+
+                                    <Link
+                                        className="duration-300 hover:scale-110 hover:rotate-3"
+                                        aria-label="LinkedIN"
+                                        href="https://www.linkedin.com/in/itsmu1x/"
+                                        target="_blank"
+                                    >
+                                        <LinkedIn className="w-8 h-8" />
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </AuthProvider>
