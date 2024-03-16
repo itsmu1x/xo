@@ -36,7 +36,7 @@ export default async function Room({
         if (user && !room.o && room.x_username !== user.username) {
             room.o = user
             room.o_username = user.username
-            pusher.trigger(id, "edit", {
+            await pusher.trigger(id, "edit", {
                 o: user,
                 o_username: user.username,
             })

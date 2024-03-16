@@ -35,7 +35,7 @@ export async function createGame() {
         },
     })
 
-    pusher.trigger("rooms", "rooms", await getRooms())
+    await pusher.trigger("rooms", "rooms", await getRooms())
     redirect(`/${room.identifier}`)
 }
 
@@ -67,7 +67,7 @@ export async function play(json: any) {
     const result = win || tie ? (win ? room.turn : "tie") : "none"
     const turn = room.turn === "x" ? "o" : "x"
 
-    pusher.trigger(roomId, "edit", {
+    await pusher.trigger(roomId, "edit", {
         board,
         turn,
         result,
