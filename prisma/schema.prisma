@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URI")
+}
+
+model User {
+  username  String   @id @unique
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  x_rooms Room[] @relation("x_user")
+  o_rooms Room[] @relation("o_user")
+
+  @@index([username])
+  @@map("users")
+}
+
+model Room {
+  identifier String   @id @unique
+  x_username String   @map("x")
+  o_username String?  @map("o")
+  turn       Player   @default(x)
+  result     Result   @default(none)
+  board      Json[]
+  createdAt  DateTime @default(now())
+  expireAt   DateTime @default(now())
+
+  x User  @relation("x_user", fields: [x_username], references: [username])
+  o User? @relation("o_user", fields: [o_username], references: [username])
+
+  @@index([identifier])
+  @@map("rooms")
+}
+
+enum Player {
+  x
+  o
+}
+
+enum Result {
+  x
+  o
+  tie
+  none
+}
