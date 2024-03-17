@@ -80,7 +80,7 @@ export default function Page() {
                 {room.result !== "none" && (
                     <button
                         onClick={() => createRoom(room.player)}
-                        className="mt-2 px-4 col-span-3 py-2 shadow-lg bg-primary disabled:bg-primary/80 hover:bg-primary/80 text-white font-semibold rounded-lg duration-300"
+                        className="px-4 col-span-3 py-2 shadow-lg bg-primary disabled:bg-primary/80 hover:bg-primary/80 text-white font-semibold rounded-lg duration-300"
                     >
                         Play again
                     </button>
