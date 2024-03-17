@@ -28,13 +28,13 @@ export default async function Home() {
                         Create Game
                     </button>
 
-                    <button
-                        title="soon"
-                        disabled
-                        className="mt-4 px-4 w-full cursor-not-allowed py-2 shadow-lg bg-primary disabled:bg-primary/80 hover:bg-primary/80 text-white font-semibold rounded-lg duration-300"
+                    <Link
+                        href="/offline"
+                        type="button"
+                        className="mt-4 px-4 w-full text-center py-2 shadow-lg bg-primary disabled:bg-primary/80 hover:bg-primary/80 text-white font-semibold rounded-lg duration-300"
                     >
                         Offline Game
-                    </button>
+                    </Link>
                 </div>
 
                 {!username ? (

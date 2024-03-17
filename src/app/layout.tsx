@@ -45,7 +45,7 @@ export default async function RootLayout({
                             <div className="container max-w-2xl px-5">
                                 {children}
 
-                                <div className="mt-6 w-fit flex gap-2">
+                                <div className="mt-6 w-fit flex mx-auto gap-2">
                                     <Link
                                         className="duration-300 hover:scale-110 hover:rotate-3"
                                         aria-label="Github"

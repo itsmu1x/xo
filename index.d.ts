@@ -19,6 +19,13 @@ declare global {
         }
     }>
 
+    type OfflineRoom = {
+        board: Board
+        player: Player
+        bot: Player
+        result: Result
+    }
+
     // easy? to make the process.env working probably
     namespace NodeJS {
         interface ProcessEnv {

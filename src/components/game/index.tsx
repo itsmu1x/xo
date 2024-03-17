@@ -50,7 +50,7 @@ export default function Game({ room: initialRoom }: Props) {
                         href="/"
                         className="mt-4 px-4 py-2 shadow-lg bg-primary disabled:bg-primary/80 hover:bg-primary/80 text-white font-semibold rounded-lg duration-300"
                     >
-                        Go Home
+                        Home
                     </Link>
                 </div>
             )}
@@ -68,6 +68,14 @@ export default function Game({ room: initialRoom }: Props) {
                             />
                         ))
                     )}
+
+                    <Link
+                        href="/"
+                        type="button"
+                        className="px-4 col-span-3 text-center py-2 shadow-lg bg-primary disabled:bg-primary/80 hover:bg-primary/80 text-white font-semibold rounded-lg duration-300"
+                    >
+                        Home
+                    </Link>
                 </div>
             )}
         </>
