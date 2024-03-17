@@ -1,13 +1,15 @@
 import { getUserFromCookie } from "@/uses/jwt"
-import type { Metadata } from "next"
 import { PusherProvider } from "@/components/contexts/pusher"
 import { ToastContainer } from "react-toastify"
+import type { Metadata } from "next"
+import { AuthProvider } from "@/components/contexts/auth"
+
+import LinkedIn from "@/components/icons/linkedin"
+import Github from "@/components/icons/github"
+import Link from "next/link"
+
 import "./styles.css"
 import "react-toastify/ReactToastify.min.css"
-import { AuthProvider } from "@/components/contexts/auth"
-import Link from "next/link"
-import Github from "@/components/icons/github"
-import LinkedIn from "@/components/icons/linkedin"
 
 export const metadata: Metadata = {
     title: "Multiplayer Tic Tac Toe",
